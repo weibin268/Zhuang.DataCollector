@@ -5,7 +5,10 @@ using System.Text;
 
 namespace Zhuang.DataCollector
 {
-    public class Class1
+    public interface IDataHandler
     {
+
+        bool Handle(DataContext dataContext);
+
     }
 }
