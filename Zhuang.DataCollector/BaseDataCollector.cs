@@ -20,8 +20,7 @@ namespace Zhuang.DataCollector
             _inputProvider = inputProvider;
             _outputProvider = outputProvider;
         }
-
-
+        
         public void Collect(string path)
         {
             long cursor = 0;
