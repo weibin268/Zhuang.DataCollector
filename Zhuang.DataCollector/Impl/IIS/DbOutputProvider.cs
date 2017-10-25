@@ -6,11 +6,11 @@ using Zhuang.DataCollector.Providers;
 
 namespace Zhuang.DataCollector.Impl.IIS
 {
-    public class LogCollector : BaseDataCollector
+    public class DbOutputProvider:IOutputProvider
     {
-        public LogCollector() : base(new LocalFileInputProvider(), new DbOutputProvider())
+        public void WriteData(IList<Dictionary<string, object>> data)
         {
-
+            throw new NotImplementedException();
         }
     }
 }

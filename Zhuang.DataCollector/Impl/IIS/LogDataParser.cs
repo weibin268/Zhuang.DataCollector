@@ -5,12 +5,12 @@ using System.Text;
 
 namespace Zhuang.DataCollector.Impl.IIS
 {
-    class IISLogDataParser:IDataItemParser
+    class LogDataParser:IDataItemParser
     {
 
         private Dictionary<int, string> dicFieldsInfo;
 
-        public IISLogDataParser()
+        public LogDataParser()
         {
 
         }

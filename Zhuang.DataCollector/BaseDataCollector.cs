@@ -22,10 +22,12 @@ namespace Zhuang.DataCollector
         }
 
 
-        public void Collect()
+        public void Collect(string path)
         {
-            var rawData = _inputProvider.GetData();
+            long cursor = 0;
 
+            var rawData = _inputProvider.ReadData(path, ref cursor);
+            
             IList<Dictionary<string, object>> newData = new List<Dictionary<string, object>>();
 
             foreach (var item in rawData)
@@ -41,7 +43,7 @@ namespace Zhuang.DataCollector
                 }
             }
 
-            _outputProvider.SaveData(newData);
+            _outputProvider.WriteData(newData);
 
         }
 

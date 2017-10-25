@@ -7,7 +7,7 @@ namespace Zhuang.DataCollector
 {
     public interface IDataCollector
     {
-        void Collect();
+        void Collect(string path);
 
         void SetDataHandler(IDataHandler dataHandler);
     }

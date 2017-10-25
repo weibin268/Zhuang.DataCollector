@@ -9,42 +9,44 @@ namespace Zhuang.DataCollector.Impl.IIS
 {
     public class LocalFileInputProvider : IInputProvider
     {
-        private string _filePath;
-
+        
         private IDataItemParser _dataItemParser;
 
-        public LocalFileInputProvider(string filePath)
+        public LocalFileInputProvider()
         {
-            _filePath = filePath;
-
-            _dataItemParser=new IISLogDataParser();
+            _dataItemParser = new LogDataParser();
         }
 
-        public IList<Dictionary<string, object>> GetData()
+        public IList<Dictionary<string, object>> ReadData(string path,ref long cursor)
         {
-            var result=new List<Dictionary<string, object>>();
+            var result = new List<Dictionary<string, object>>();
 
-            using (var fs=new FileStream(_filePath,FileMode.Open,FileAccess.Read))
-            using (var sr=new StreamReader(fs))
+            using (var fs = new FileStream(path, FileMode.Open, FileAccess.Read))
+            using (var sr = new StreamReader(fs))
             {
+                fs.Seek(cursor, SeekOrigin.Begin);
+
                 string line;
-                while ((line = sr.ReadLine())!=null)
+                while ((line = sr.ReadLine()) != null)
                 {
                     if (line.StartsWith("#Fields:"))
                     {
-                        ((IISLogDataParser)_dataItemParser).SetFieldsInfo(line);
+                        ((LogDataParser)_dataItemParser).SetFieldsInfo(line);
                     }
 
                     if (line.StartsWith("#"))
                     {
                         continue;
                     }
-                    
-                    var dicItem =_dataItemParser.Parse(line);
+
+                    var dicItem = _dataItemParser.Parse(line);
 
                     result.Add(dicItem);
+
                 }
-             }
+
+                cursor = fs.Position;
+            }
 
             return result;
         }

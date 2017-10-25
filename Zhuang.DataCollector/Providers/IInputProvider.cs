@@ -7,6 +7,7 @@ namespace Zhuang.DataCollector.Providers
 {
     public interface IInputProvider
     {
-        IList<Dictionary<string, Object>> GetData();
+        IList<Dictionary<string, Object>> ReadData(string path, ref long cursor);
     }
+
 }

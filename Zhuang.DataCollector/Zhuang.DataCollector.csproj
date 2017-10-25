@@ -44,7 +44,8 @@
     <Compile Include="IDataCollector.cs" />
     <Compile Include="IDataHandler.cs" />
     <Compile Include="IDataItemParser.cs" />
-    <Compile Include="Impl\IIS\IISLogDataParser.cs" />
+    <Compile Include="Impl\IIS\DbOutputProvider.cs" />
+    <Compile Include="Impl\IIS\LogDataParser.cs" />
     <Compile Include="Providers\IOutputProvider.cs" />
     <Compile Include="Providers\IInputProvider.cs" />
     <Compile Include="Impl\IIS\LogCollector.cs" />

@@ -8,6 +8,6 @@ namespace Zhuang.DataCollector.Providers
 {
     public interface IOutputProvider
     {
-        void SaveData(IList<Dictionary<string,object>> data);
+        void WriteData(IList<Dictionary<string,object>> data);
     }
 }
