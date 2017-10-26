@@ -1,4 +1,4 @@
-﻿DROP TABLE IF EXISTS `Sys_ReadDataLog`;
+﻿DROP TABLE IF EXISTS Sys_ReadDataLog;
 
 CREATE TABLE Sys_ReadDataLog
 (
@@ -9,7 +9,6 @@ CREATE TABLE Sys_ReadDataLog
     CreatedDate DATETIME NOT NULL,
     ModifiedDate DATETIME
 );
-
 
 
 DROP TABLE IF EXISTS Sys_IISLog;
@@ -31,7 +30,7 @@ CREATE TABLE Sys_IISLog
     sc_status VARCHAR(10),
     sc_substatus VARCHAR(10),
     sc_win32_status VARCHAR(10),
-    time_taken VARCHAR(10),
+    time_taken BIGINT,
     ext_cs_ip VARCHAR(500),
     CreatedDate DATETIME
 );
