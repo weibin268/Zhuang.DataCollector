@@ -10,7 +10,7 @@ namespace Zhuang.DataCollector.Impl.IIS
     {
         public void WriteData(IList<Dictionary<string, object>> data)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 }

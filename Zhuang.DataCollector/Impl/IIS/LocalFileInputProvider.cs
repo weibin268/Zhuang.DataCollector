@@ -16,21 +16,28 @@ namespace Zhuang.DataCollector.Impl.IIS
             _dataItemParser = new LogDataItemParser();
         }
 
-        public IList<Dictionary<string, object>> ReadData(string path, ref long cursor)
+        public IList<Dictionary<string, object>> ReadData(string path, ReadDataContext readDataContext)
         {
             var result = new List<Dictionary<string, object>>();
 
             using (var fs = new FileStream(path, FileMode.Open, FileAccess.Read))
             using (var sr = new StreamReader(fs))
             {
-                fs.Seek(cursor, SeekOrigin.Begin);
+                if (!string.IsNullOrEmpty(readDataContext.RuleText))
+                {
+                    DataItemParser.SetParseRule(readDataContext.RuleText);
+                }
 
+                fs.Seek(readDataContext.CursorPosition, SeekOrigin.Begin);
+                
                 string line;
                 while ((line = sr.ReadLine()) != null)
                 {
+
                     if (line.StartsWith("#Fields:"))
                     {
                         DataItemParser.SetParseRule(line);
+                        readDataContext.RuleText = line;
                     }
 
                     if (line.StartsWith("#"))
@@ -42,9 +49,13 @@ namespace Zhuang.DataCollector.Impl.IIS
 
                     result.Add(dicItem);
 
+                    //Console.WriteLine(line);
+
                 }
 
-                cursor = fs.Position;
+                readDataContext.CursorPosition = fs.Position;
+
+                //Console.WriteLine(readDataContext.RuleText);
             }
 
             return result;

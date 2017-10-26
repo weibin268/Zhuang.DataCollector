@@ -7,8 +7,8 @@ namespace Zhuang.DataCollector
 {
     public interface IInputProvider
     {
-        IList<Dictionary<string, object>> ReadData(string path, ref long cursor);
-
+        IList<Dictionary<string, object>> ReadData(string path, ReadDataContext readDataContext);
+        
         IDataItemParser DataItemParser { get;}
     }
 

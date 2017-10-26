@@ -13,7 +13,7 @@ namespace Zhuang.DataCollector.Test.Impl.IIS
         {
             LogDataCollector logDataCollector = new LogDataCollector();
 
-            var path = @"C:\inetpub\logs\LogFiles\W3SVC8\u_ex170920.log";
+            var path = @"D:\u_ex170920.log";
 
             logDataCollector.Collect(path);
         }

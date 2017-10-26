@@ -12,10 +12,11 @@ namespace Zhuang.DataCollector.Test.Impl.IIS
         public void TestGetData()
         {
             var localFileInputProvider = new LocalFileInputProvider();
-
-            long cursor=0;
+            
             var path = @"C:\inetpub\logs\LogFiles\W3SVC8\u_ex170920.log";
-            var data = localFileInputProvider.ReadData(path,ref cursor);
+            var readDataContext=new ReadDataContext();
+            readDataContext.CursorPosition = 0;
+            var data = localFileInputProvider.ReadData(path,readDataContext);
 
             foreach (var item in data)
             {
