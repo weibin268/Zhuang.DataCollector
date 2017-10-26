@@ -34,7 +34,7 @@ namespace Zhuang.DataCollector
             if (readDataLog != null)
             {
                 readDataContext.CursorPosition = readDataLog.CursorPosition;
-                readDataLog.RuleText = readDataLog.RuleText;
+                readDataContext.RuleText = readDataLog.RuleText;
             }
 
             var rawData = _inputProvider.ReadData(path, readDataContext);

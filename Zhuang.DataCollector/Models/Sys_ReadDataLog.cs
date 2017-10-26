@@ -7,6 +7,7 @@ namespace Zhuang.DataCollector.Models
 {
     public class Sys_ReadDataLog
     {
+        [Zhuang.Data.Annotations.Key]
         public string Id { get; set; }
 
         public string DataPath { get; set; }
