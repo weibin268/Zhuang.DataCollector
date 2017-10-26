@@ -27,7 +27,7 @@ namespace Zhuang.DataCollector.Impl.IIS
         {
             _dicFieldsInfo = new Dictionary<int, string>();
 
-            ruleText = ruleText.Replace("#Fields: ", "");
+            ruleText = ruleText.Replace("#Fields:", "").Trim();
 
             var fieldsInfo = ruleText.Split(' ');
 
