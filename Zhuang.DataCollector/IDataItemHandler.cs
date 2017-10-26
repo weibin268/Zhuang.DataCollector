@@ -5,10 +5,8 @@ using System.Text;
 
 namespace Zhuang.DataCollector
 {
-    public interface IDataHandler
+    public interface IDataItemHandler
     {
-
-        bool Handle(DataContext dataContext);
-
+        bool Handle(DataItemContext dataContext);
     }
 }

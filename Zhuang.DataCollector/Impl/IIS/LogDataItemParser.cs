@@ -1,0 +1,40 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Zhuang.DataCollector.Impl.IIS
+{
+    public class LogDataItemParser : IDataItemParser
+    {
+        private Dictionary<int, string> _dicFieldsInfo;
+
+        public Dictionary<string, object> Parse(string dataItem)
+        {
+            var result = new Dictionary<string, object>();
+
+            var dataFields = dataItem.Split(' ');
+
+            for (int i = 0; i < dataFields.Length; i++)
+            {
+                result.Add(_dicFieldsInfo[i], dataFields[i]);
+            }
+
+            return result;
+        }
+
+        public void SetParseRule(string ruleText)
+        {
+            _dicFieldsInfo = new Dictionary<int, string>();
+
+            ruleText = ruleText.Replace("#Fields: ", "");
+
+            var fieldsInfo = ruleText.Split(' ');
+
+            for (int i = 0; i < fieldsInfo.Length; i++)
+            {
+                _dicFieldsInfo.Add(i, fieldsInfo[i]);
+            }
+        }
+    }
+}

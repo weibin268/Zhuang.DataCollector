@@ -6,16 +6,16 @@ using Zhuang.DataCollector.Impl.IIS;
 namespace Zhuang.DataCollector.Test.Impl.IIS
 {
     [TestClass]
-    public class LogCollectorTest
+    public class LogDataCollectorTest
     {
         [TestMethod]
         public void TestCollect()
         {
-            LogCollector logCollector = new LogCollector();
+            LogDataCollector logDataCollector = new LogDataCollector();
 
             var path = @"C:\inetpub\logs\LogFiles\W3SVC8\u_ex170920.log";
 
-            logCollector.Collect(path);
+            logDataCollector.Collect(path);
         }
     }
 }

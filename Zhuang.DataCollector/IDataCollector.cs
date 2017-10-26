@@ -9,6 +9,6 @@ namespace Zhuang.DataCollector
     {
         void Collect(string path);
 
-        void SetDataHandler(IDataHandler dataHandler);
+        void SetDataItemHandler(IDataItemHandler dataHandler);
     }
 }

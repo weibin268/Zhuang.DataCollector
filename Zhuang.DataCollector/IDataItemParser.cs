@@ -7,6 +7,9 @@ namespace Zhuang.DataCollector
 {
     public interface IDataItemParser
     {
-        Dictionary<string, object> Parse(string strData);
+        Dictionary<string, object> Parse(string dataItem);
+
+        void SetParseRule(string ruleText);
+
     }
 }

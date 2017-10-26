@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Zhuang.DataCollector
 {
-    public class DataContext
+    public class DataItemContext
     {
         public IDataCollector DataCollector { get; set; }
 

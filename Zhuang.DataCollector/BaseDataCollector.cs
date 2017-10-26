@@ -2,18 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Zhuang.DataCollector.Providers;
+using Zhuang.DataCollector;
 
 namespace Zhuang.DataCollector
 {
     public class BaseDataCollector : IDataCollector
     {
-
         private IInputProvider _inputProvider;
 
         private IOutputProvider _outputProvider;
 
-        private IDataHandler _dataHandler;
+        private IDataItemHandler _dataItemHandler;
 
         public BaseDataCollector(IInputProvider inputProvider, IOutputProvider outputProvider)
         {
@@ -32,9 +31,9 @@ namespace Zhuang.DataCollector
             foreach (var item in rawData)
             {
                 var handleResult = true;
-                if (_dataHandler != null)
+                if (_dataItemHandler != null)
                 {
-                    handleResult = _dataHandler.Handle(new DataContext() { DataCollector = this, DataItem = item });
+                    handleResult = _dataItemHandler.Handle(new DataItemContext() { DataCollector = this, DataItem = item });
                 }
                 if (handleResult)
                 {
@@ -46,9 +45,9 @@ namespace Zhuang.DataCollector
 
         }
 
-        public void SetDataHandler(IDataHandler dataHandler)
+        public void SetDataItemHandler(IDataItemHandler dataHandler)
         {
-            _dataHandler = dataHandler;
+            _dataItemHandler = dataHandler;
         }
     }
 }
