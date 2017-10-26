@@ -48,9 +48,7 @@ namespace Zhuang.DataCollector.Impl.IIS
                     var dicItem = DataItemParser.Parse(line);
 
                     result.Add(dicItem);
-
-                    //Console.WriteLine(line);
-
+                    
                 }
 
                 readDataContext.CursorPosition = fs.Position;

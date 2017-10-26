@@ -33,7 +33,11 @@ namespace Zhuang.DataCollector.Impl.IIS
 
             for (int i = 0; i < fieldsInfo.Length; i++)
             {
-                _dicFieldsInfo.Add(i, fieldsInfo[i]);
+                var fieldName = fieldsInfo[i];
+
+                fieldName = fieldName.Replace("(", "").Replace(")","").Replace("-","_");
+
+                _dicFieldsInfo.Add(i, fieldName);
             }
         }
     }
