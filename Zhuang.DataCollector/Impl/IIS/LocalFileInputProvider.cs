@@ -40,7 +40,7 @@ namespace Zhuang.DataCollector.Impl.IIS
                         readDataContext.RuleText = line;
                     }
 
-                    if (line.StartsWith("#"))
+                    if (string.IsNullOrEmpty(line) || line.StartsWith("#"))
                     {
                         continue;
                     }

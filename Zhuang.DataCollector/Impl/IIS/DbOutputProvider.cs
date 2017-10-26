@@ -20,11 +20,12 @@ namespace Zhuang.DataCollector.Impl.IIS
                         #csUser_Agent#,#csReferer#,#sc_status#,#sc_substatus#,
                         #sc_win32_status#,#time_taken#,#CreatedDate#);";
 
+            DbAccessor dbAccessor = DbAccessor.Get();
             foreach (var item in data)
             {
                 item.Add("Id",Guid.NewGuid().ToString());
                 item.Add("CreatedDate",DateTime.Now);
-                DbAccessor.Get().ExecuteNonQuery(strSql, item);
+                dbAccessor.ExecuteNonQuery(strSql, item);
             }
 
         }
