@@ -12,26 +12,26 @@ CREATE TABLE Sys_ReadDataLog
 
 
 
-DROP TABLE IF EXISTS `Sys_IISLog`;
+DROP TABLE IF EXISTS Sys_IISLog;
 
 CREATE TABLE Sys_IISLog
 (
     Id VARCHAR(50) PRIMARY KEY,
     date DATE,
     time TIME,
-    `s-ip` VARCHAR(50),
-    `cs-method` VARCHAR(10),
-    `cs-uri-stem` VARCHAR(500),
-    `cs-uri-query` VARCHAR(500),
-    `s-port` VARCHAR(10),
-    `cs-username` VARCHAR(50),
-    `c-ip` VARCHAR(50),
-    `csUser-Agent` VARCHAR(2000),
+    s_ip VARCHAR(50),
+    cs_method VARCHAR(10),
+    cs_uri_stem VARCHAR(500),
+    cs_uri_query VARCHAR(500),
+    s_port VARCHAR(10),
+    cs_username VARCHAR(50),
+    c_ip VARCHAR(50),
+    csUser_Agent VARCHAR(2000),
     csReferer VARCHAR(500),
-    `sc-status` VARCHAR(10),
-    `sc-substatus` VARCHAR(10),
-    `sc-win32-status` VARCHAR(10),
-    `time-taken` VARCHAR(10),
-    `ext_cs-ip` VARCHAR(500),
+    sc_status VARCHAR(10),
+    sc_substatus VARCHAR(10),
+    sc_win32_status VARCHAR(10),
+    time_taken VARCHAR(10),
+    ext_cs_ip VARCHAR(500),
     CreatedDate DATETIME
 );
