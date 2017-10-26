@@ -29,6 +29,7 @@ namespace Zhuang.DataCollector.Services
             {
                 oldModel.CursorPosition = model.CursorPosition;
                 oldModel.RuleText = model.RuleText;
+                oldModel.ModifiedDate = DateTime.Now;
                 _dbAccessor.Update<Sys_ReadDataLog>(oldModel);
             }
         }
