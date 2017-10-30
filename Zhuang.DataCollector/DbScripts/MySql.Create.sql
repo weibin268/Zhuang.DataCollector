@@ -24,6 +24,8 @@ CREATE TABLE Sys_IISLog
     cs_uri_query VARCHAR(2000),
     s_port VARCHAR(10),
     cs_username VARCHAR(50),
+	s_sitename varchar(100),
+	s_computername varchar(100),
     c_ip VARCHAR(50),
     csUser_Agent VARCHAR(2000),
     csReferer VARCHAR(2000),
@@ -32,5 +34,7 @@ CREATE TABLE Sys_IISLog
     sc_win32_status VARCHAR(20),
     time_taken BIGINT,
     ext_cs_ip VARCHAR(500),
+	ext_site_type VARCHAR(50),
+	ext_subsite_id VARCHAR(50),
     CreatedDate DATETIME
 );
