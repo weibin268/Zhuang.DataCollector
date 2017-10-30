@@ -35,6 +35,7 @@
       <HintPath>MyLibs\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -53,6 +54,7 @@
     <Compile Include="IDataItemHandler.cs" />
     <Compile Include="IDataItemParser.cs" />
     <Compile Include="Impl\IIS\DbOutputProvider.cs" />
+    <Compile Include="Impl\IIS\LogDataCollectService.cs" />
     <Compile Include="Impl\IIS\LogDataItemParser.cs" />
     <Compile Include="IOutputProvider.cs" />
     <Compile Include="IInputProvider.cs" />
@@ -63,6 +65,7 @@
     <Compile Include="ReadDataContext.cs" />
     <Compile Include="Services\DefaultDataCollector.cs" />
     <Compile Include="Services\IDataCollectorService.cs" />
+    <Compile Include="Utility\FileUtil.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
