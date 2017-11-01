@@ -9,6 +9,8 @@ namespace Zhuang.DataCollector.Test
         [TestMethod]
         public void TestMethod1()
         {
+
         }
+
     }
 }
