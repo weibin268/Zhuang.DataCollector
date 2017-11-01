@@ -25,6 +25,8 @@ namespace Zhuang.DataCollector.Impl.IIS
 
             if (!string.IsNullOrEmpty(dirs))
             {
+                dirs = dirs.Replace("\n", "").Replace("\n\r","");
+
                 var arrDirs = dirs.Split(';');
 
                 foreach (var dir in arrDirs)
