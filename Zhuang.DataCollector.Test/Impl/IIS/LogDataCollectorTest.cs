@@ -14,9 +14,10 @@ namespace Zhuang.DataCollector.Test.Impl.IIS
             LogDataCollector logDataCollector = new LogDataCollector();
 
             //var path = @"D:\BC2BING-G7LLGSN-Server_D20171025-011752061.log";
-            var path = @"C:\inetpub\logs\LogFiles\W3SVC8\u_ex170920.log";
+            var path = @"D:\BC2BING-G7LLGSN-Server_D20171101-085816906.log";
 
             logDataCollector.Collect(path);
+
         }
     }
 }

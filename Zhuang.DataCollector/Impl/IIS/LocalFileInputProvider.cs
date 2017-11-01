@@ -20,7 +20,7 @@ namespace Zhuang.DataCollector.Impl.IIS
         {
             var result = new List<Dictionary<string, object>>();
 
-            using (var fs = new FileStream(path, FileMode.Open, FileAccess.Read))
+            using (var fs = new FileStream(path, FileMode.Open, FileAccess.Read,FileShare.ReadWrite))
             using (var sr = new StreamReader(fs))
             {
                 if (!string.IsNullOrEmpty(readDataContext.RuleText))

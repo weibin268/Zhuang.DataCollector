@@ -15,6 +15,8 @@ namespace Zhuang.DataCollector.Impl.IIS
 
             var dataFields = dataItem.Split(' ');
 
+            if (dataFields.Length != _dicFieldsInfo.Keys.Count) return result;
+
             for (int i = 0; i < dataFields.Length; i++)
             {
                 result.Add(_dicFieldsInfo[i], dataFields[i]);
