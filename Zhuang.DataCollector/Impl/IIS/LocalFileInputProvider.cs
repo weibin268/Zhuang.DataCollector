@@ -33,8 +33,7 @@ namespace Zhuang.DataCollector.Impl.IIS
                 string line;
                 while ((line = sr.ReadLine()) != null)
                 {
-
-                    if (line.StartsWith("#Fields:"))
+                    if (line.StartsWith(LogDataItemParser.FIELD_NAMES_ROW_START_MARK))
                     {
                         DataItemParser.SetParseRule(line);
                         readDataContext.RuleText = line;
