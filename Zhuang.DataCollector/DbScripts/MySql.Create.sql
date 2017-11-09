@@ -38,3 +38,5 @@ CREATE TABLE Sys_IISLog
 	ext_subsite_id VARCHAR(50),
     CreatedDate DATETIME
 );
+
+CREATE INDEX sys_iislog_CreatedDate_index ON sys_iislog (CreatedDate);
